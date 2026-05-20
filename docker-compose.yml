@@ -1,0 +1,8 @@
+services:
+  postgres:
+    image: postgres:17.6@sha256:ae3afa4af0906431de8856bf80a8bcf8a9ea6b3609f9e025f927b949ac93467d
+    ports:
+      - "5432:5432"
+    env_file: .env
+    volumes:
+      - ./docker/postgres/00-init-db-and-roles-v1.sh:/docker-entrypoint-initdb.d/00-init-db-and-roles-v1.sh:ro
